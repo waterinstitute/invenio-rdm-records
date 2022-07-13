@@ -51,6 +51,30 @@
           "properties": "required" = True
         },
         
+        "last modified time": {
+          "description": "last edited.",
+          "type": "object"
+          "properties": {
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+          }
+        },
+      
+        "Program": {
+          "description": "What program is being used?",
+          "type": "string"
+        },
+      
+        "Parent Version": {
+          "description": "What prior version is this based on?",
+          "type": "string"
+        },
+      
+        "Status": {
+          "description": "What is the status of your model?",
+          "type": "string"
+        
         "description": {
           "description": "Describe your data.",
           "type": "string"
