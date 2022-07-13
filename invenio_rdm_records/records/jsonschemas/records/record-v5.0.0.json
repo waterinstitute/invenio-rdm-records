@@ -48,27 +48,32 @@
         "title": {
           "description": "Primary title of the record.",
           "type": "string"
+          "properties": "required" = True
         },
         
         "description": {
           "description": "Describe your data.",
           "type": "string"
+          "properties": "required" = True
         },
         
         "purpose": {
           "description": "Reason for your data.",
           "type": "string"
+          "properties": "required" = True
         },
         
         "Keywords": {
           "description": "Use commas to seperate Keywords.",
           "type": "string"
+          "properties": "required" = True
         },
         
         "Model Category": {
           "description": "Choose the type of your model.",
           "type": "object"
           "enum": { "choices": [{"Hydrology"}, {"Agriculture"}, {"Atmospheric Dispersion"}, {"Decision Support"}, {"Economy"}, {"Fire"}, {"Weather"}] } 
+          "properties": "required" = True
         }, 
 
         "License": {
