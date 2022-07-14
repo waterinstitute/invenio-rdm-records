@@ -73,7 +73,8 @@
       
         "Status": {
           "description": "What is the status of your model?",
-          "type": "string"
+          "type": "object"
+          "enum": { "choices": [{"Unpublished"}, {"toReview"}, {"Published"}, {"Recommended or Authorative"}, {"Obsolete"}] }
         
         "description": {
           "description": "Describe your data.",
