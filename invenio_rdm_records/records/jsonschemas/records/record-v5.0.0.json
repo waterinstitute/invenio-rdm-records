@@ -47,13 +47,15 @@
 
         "title": {
           "description": "Primary title of the record.",
-          "type": "string"
-          "properties": "required" = True
+          "type": "string",
+          "properties": {
+            "required": ["title"]
+          }
         },
         
         "last modified time": {
           "description": "last edited.",
-          "type": "object"
+          "type": "object",
           "properties": {
             "timestamp": {
               "type": "string",
@@ -73,32 +75,41 @@
       
         "Status": {
           "description": "What is the status of your model?",
-          "type": "object"
-          "enum": { "choices": [{"Unpublished"}, {"toReview"}, {"Published"}, {"Recommended or Authorative"}, {"Obsolete"}] }
+          "type": "object",
+          "enum": ["Unpublished", "toReview", "Published", "Recommended or Authorative", "Obsolete"] 
+        },
         
-        "description": {
+       "Description": {
           "description": "Describe your data.",
-          "type": "string"
-          "properties": "required" = True
+          "type": "string",
+          "properties": {
+         	"required": ["Description"]
+       }
         },
         
         "purpose": {
           "description": "Reason for your data.",
-          "type": "string"
-          "properties": "required" = True
+          "type": "string",
+          "properties": {
+          	"required": ["purpose"]
+        }
         },
         
         "Keywords": {
           "description": "Use commas to seperate Keywords.",
-          "type": "string"
-          "properties": "required" = True
+          "type": "string",
+          "properties": {
+            "required": ["Keywords"]
+          }
         },
         
         "Model Category": {
           "description": "Choose the type of your model.",
-          "type": "object"
-          "enum": { "choices": [{"Hydrology"}, {"Agriculture"}, {"Atmospheric Dispersion"}, {"Decision Support"}, {"Economy"}, {"Fire"}, {"Weather"}] } 
-          "properties": "required" = True
+          "type": "object",
+          "enum": ["Hydrology", "Agriculture", "Atmospheric Dispersion", "Decision Support", "Economy", "Fire", "Weather"],
+          "properties": {
+          	"required": ["Model Category"]
+        }
         }, 
 
         "License": {
