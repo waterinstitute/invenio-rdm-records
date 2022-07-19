@@ -145,7 +145,7 @@
         "Temporal": {
           "description": "What temporal data is used?",
           "type": "string"
-        },
+        }
       }
     },
 
