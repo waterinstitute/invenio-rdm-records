@@ -60,6 +60,7 @@
             "timestamp": {
               "type": "string",
               "format": "date-time"
+             }
           }
         },
       
@@ -84,7 +85,7 @@
           "type": "string",
           "properties": {
          	"required": ["Description"]
-       }
+          }
         },
         
         "purpose": {
@@ -92,7 +93,7 @@
           "type": "string",
           "properties": {
           	"required": ["purpose"]
-        }
+          }
         },
         
         "Keywords": {
@@ -109,7 +110,7 @@
           "enum": ["Hydrology", "Agriculture", "Atmospheric Dispersion", "Decision Support", "Economy", "Fire", "Weather"],
           "properties": {
           	"required": ["Model Category"]
-        }
+          }
         }, 
 
         "License": {
@@ -145,6 +146,8 @@
           "description": "What temporal data is used?",
           "type": "string"
         },
+      }
+    },
 
     "ext": {
       "type": "object",
