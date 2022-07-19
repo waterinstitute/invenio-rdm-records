@@ -142,6 +142,63 @@
             }
           }
         },
+        "Ensemble/Coupled Model metadata": {
+          "description": "Coupled Model metadata",
+          "type": "object",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Access Level": {
+                "type": "string"
+              },
+              "License": {
+                "description": "Any license or copyright information for this resource.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {},
+                    "title": {
+                      "description": "The license name or license itself. Free text.",
+                      "type": "object"
+                    },
+                    "description": {
+                      "description": "The license description Free text.",
+                      "type": "object"
+                    },
+                    "link": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              },
+              "last modified time": {
+                "description": "last edited.",
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "Spatial": {
+                "description": "What spatial data is used?",
+                "type": "string"
+              },
+              "Temporal": {
+                "description": "What temporal data is used?",
+                "type": "string"
+              },
+              "Program": {
+                "description": "Describe your data",
+                "type": "string"
+              },
+              "Parent Version": {
+                
+        },
         "Spatial": {
           "description": "What spatial data is used?",
           "type": "string"
