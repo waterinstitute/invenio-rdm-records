@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "local://records/record-v5.0.0.json",
-  "title": "InvenioRDM Record Schema v5.0.0",
+  "id": "local://records/simulations-v1.0.0.json",
+  "title": "InvenioRDM Record Simulations Schema v1.0.0",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -29,123 +29,29 @@
       "additionalProperties": false,
       "properties": {
 
-        "resource_type": {"$ref": "local://records/definitions-v2.0.0.json#/resource_type"},
+      "resource_type": {"$ref": "local://records/definitions-v2.0.0.json#/resource_type"},
 
-        "creators": {
-          "description": "Creators of the resource.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "person_or_org": {"$ref": "local://records/definitions-v2.0.0.json#/person_or_org"},
-                "role": {"$ref": "local://records/definitions-v2.0.0.json#/role"},
-                "affiliations": {"$ref": "local://records/definitions-v2.0.0.json#/affiliations"}
-            }
-          }
-        },
-
-        "title": {
+      "title": {
           "description": "Primary title of the record.",
-          "type": "string",
-          "properties": {
-            "required": ["title"]
-          }
-        },
-        
-        "last modified time": {
-          "description": "last edited.",
-          "type": "object",
-          "properties": {
-            "timestamp": {
-              "type": "string",
-              "format": "date-time"
-          }
-        },
-      
-        "Program": {
-          "description": "What program is being used?",
           "type": "string"
-        },
-      
-        "Parent Version": {
-          "description": "What prior version is this based on?",
-          "type": "string"
-        },
-      
-        "Status": {
-          "description": "What is the status of your model?",
-          "type": "object",
-          "enum": ["Unpublished", "toReview", "Published", "Recommended or Authorative", "Obsolete"] 
-        },
+      },
         
-       "Description": {
+      "Description": {
           "description": "Describe your data.",
-          "type": "string",
-          "properties": {
-         	"required": ["Description"]
-       }
-        },
-        
-        "purpose": {
-          "description": "Reason for your data.",
-          "type": "string",
-          "properties": {
-          	"required": ["purpose"]
-        }
-        },
-        
-        "Keywords": {
-          "description": "Use commas to seperate Keywords.",
-          "type": "string",
-          "properties": {
-            "required": ["Keywords"]
-          }
-        },
-        
-        "Model Category": {
-          "description": "Choose the type of your model.",
-          "type": "object",
-          "enum": ["Hydrology", "Agriculture", "Atmospheric Dispersion", "Decision Support", "Economy", "Fire", "Weather"],
-          "properties": {
-          	"required": ["Model Category"]
-        }
-        }, 
-
-        "License": {
-          "description": "Any license or copyright information for this resource.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "id": {"$ref": "local://definitions-v1.0.0.json#/identifier"},
-              "title": {
-                "description": "The license name or license itself. Free text.",
-                "type": "object"
-              },
-              "description": {
-                "description": "The license description Free text.",
-                "type": "object"
-              },
-              "link": {
-                "type": "string",
-                "format": "uri"
-              }
-            }
-          }
-        },        
-        
-        "Spatial": {
-          "description": "What spatial data is used?",
           "type": "string"
-        },
-
-        "Temporal": {
-          "description": "What temporal data is used?",
-          "type": "string"
-        },
-
+      },
+        
+      "Parameters": {
+          "description": "Parameters of your model.",
+          "type": "string",
+          "properties": {
+            "Standard Variable Name": "string",
+            "Value": "string"
+          }
+       }, 
+      }
+      
+  
     "ext": {
       "type": "object",
       "description": "Configured additional metadata"
