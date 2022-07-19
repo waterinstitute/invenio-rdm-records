@@ -5,21 +5,13 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "$schema": {
-      "$ref": "local://definitions-v1.0.0.json#/$schema"
-    },
-    "id": {
-      "$ref": "local://definitions-v1.0.0.json#/identifier"
-    },
-    "pid": {
-      "$ref": "local://definitions-v1.0.0.json#/internal-pid"
-    },
+    "$schema": {},
+    "id": {},
+    "pid": {},
     "pids": {
       "type": "object",
       "description": "External persistent identifiers for a record including e.g. OAI-PMH identifier, minted DOIs and more. PIDs are registered in the PIDStore.",
-      "additionalProperties": {
-        "$ref": "local://records/definitions-v2.0.0.json#/external-pid"
-      },
+      "additionalProperties": {},
       "propertyNames": {
         "pattern": "^[a-z_-][a-z0-9_-]*$"
       },
@@ -30,9 +22,7 @@
       "description": "Resource metadata.",
       "additionalProperties": false,
       "properties": {
-        "resource_type": {
-          "$ref": "local://records/definitions-v2.0.0.json#/resource_type"
-        },
+        "resource_type": {},
         "creators": {
           "description": "Creators of the resource.",
           "type": "array",
@@ -40,15 +30,9 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "person_or_org": {
-                "$ref": "local://records/definitions-v2.0.0.json#/person_or_org"
-              },
-              "role": {
-                "$ref": "local://records/definitions-v2.0.0.json#/role"
-              },
-              "affiliations": {
-                "$ref": "local://records/definitions-v2.0.0.json#/affiliations"
-              }
+              "person_or_org": {},
+              "role": {},
+              "affiliations": {}
             }
           }
         },
@@ -110,7 +94,7 @@
         },
         "Keywords": {
           "description": "Use commas to seperate Keywords.",
-          "type": "string",
+          "type": "array",
           "properties": {
             "required": [
               "Keywords"
@@ -142,9 +126,7 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "id": {
-                "$ref": "local://definitions-v1.0.0.json#/identifier"
-              },
+              "id": {},
               "title": {
                 "description": "The license name or license itself. Free text.",
                 "type": "object"
@@ -168,7 +150,14 @@
           "description": "What temporal data is used?",
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "title",
+        "Description",
+        "purpose",
+        "Keywords",
+        "Model Category"
+      ]
     },
     "ext": {
       "type": "object",
@@ -187,9 +176,7 @@
           "type": "string",
           "description": "Category for the removal."
         },
-        "removed_by": {
-          "$ref": "local://records/definitions-v2.0.0.json#/agent"
-        },
+        "removed_by": {},
         "timestamp": {
           "type": "string",
           "description": "ISO8601 formatted timestamp in UTC.",
@@ -202,12 +189,8 @@
       "description": "Record provenance.",
       "additionalProperties": false,
       "properties": {
-        "created_by": {
-          "$ref": "local://records/definitions-v2.0.0.json#/agent"
-        },
-        "on_behalf_of": {
-          "$ref": "local://records/definitions-v2.0.0.json#/agent"
-        }
+        "created_by": {},
+        "on_behalf_of": {}
       }
     },
     "access": {
@@ -283,9 +266,7 @@
         },
         "entries": {
           "type": "object",
-          "additionalProperties": {
-            "$ref": "local://records/definitions-v2.0.0.json#/file"
-          }
+          "additionalProperties": {}
         },
         "meta": {
           "type": "object",
@@ -301,5 +282,8 @@
         "type": "string"
       }
     }
-  }
+  },
+  "required": [
+    "metadata"
+  ]
 }
