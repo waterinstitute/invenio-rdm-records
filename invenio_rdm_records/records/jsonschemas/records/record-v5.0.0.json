@@ -11,26 +11,28 @@
     "id": {
       "$ref": "local://definitions-v1.0.0.json#/identifier"
     },
-    "pid": {"$ref": "local://definitions-v1.0.0.json#/internal-pid"},
-
+    "pid": {
+      "$ref": "local://definitions-v1.0.0.json#/internal-pid"
+    },
     "pids": {
       "type": "object",
       "description": "External persistent identifiers for a record including e.g. OAI-PMH identifier, minted DOIs and more. PIDs are registered in the PIDStore.",
-      "additionalProperties": {"$ref": "local://records/definitions-v2.0.0.json#/external-pid"},
+      "additionalProperties": {
+        "$ref": "local://records/definitions-v2.0.0.json#/external-pid"
+      },
       "propertyNames": {
         "pattern": "^[a-z_-][a-z0-9_-]*$"
       },
       "uniqueItems": true
     },
-
     "metadata": {
       "type": "object",
       "description": "Resource metadata.",
       "additionalProperties": false,
       "properties": {
-
-        "resource_type": {"$ref": "local://records/definitions-v2.0.0.json#/resource_type"},
-
+        "resource_type": {
+          "$ref": "local://records/definitions-v2.0.0.json#/resource_type"
+        },
         "creators": {
           "description": "Creators of the resource.",
           "type": "array",
@@ -38,21 +40,27 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "person_or_org": {"$ref": "local://records/definitions-v2.0.0.json#/person_or_org"},
-                "role": {"$ref": "local://records/definitions-v2.0.0.json#/role"},
-                "affiliations": {"$ref": "local://records/definitions-v2.0.0.json#/affiliations"}
+              "person_or_org": {
+                "$ref": "local://records/definitions-v2.0.0.json#/person_or_org"
+              },
+              "role": {
+                "$ref": "local://records/definitions-v2.0.0.json#/role"
+              },
+              "affiliations": {
+                "$ref": "local://records/definitions-v2.0.0.json#/affiliations"
+              }
             }
           }
         },
-
         "title": {
           "description": "Primary title of the record.",
           "type": "string",
           "properties": {
-            "required": ["title"]
+            "required": [
+              "title"
+            ]
           }
         },
-        
         "last modified time": {
           "description": "last edited.",
           "type": "object",
@@ -60,59 +68,73 @@
             "timestamp": {
               "type": "string",
               "format": "date-time"
-             }
+            }
           }
         },
-      
         "Program": {
           "description": "What program is being used?",
           "type": "string"
         },
-      
         "Parent Version": {
           "description": "What prior version is this based on?",
           "type": "string"
         },
-      
         "Status": {
           "description": "What is the status of your model?",
           "type": "object",
-          "enum": ["Unpublished", "toReview", "Published", "Recommended or Authorative", "Obsolete"] 
+          "enum": [
+            "Unpublished",
+            "toReview",
+            "Published",
+            "Recommended or Authorative",
+            "Obsolete"
+          ]
         },
-        
-       "Description": {
+        "Description": {
           "description": "Describe your data.",
           "type": "string",
           "properties": {
-         	"required": ["Description"]
+            "required": [
+              "Description"
+            ]
           }
         },
-        
         "purpose": {
           "description": "Reason for your data.",
           "type": "string",
           "properties": {
-          	"required": ["purpose"]
+            "required": [
+              "purpose"
+            ]
           }
         },
-        
         "Keywords": {
           "description": "Use commas to seperate Keywords.",
           "type": "string",
           "properties": {
-            "required": ["Keywords"]
+            "required": [
+              "Keywords"
+            ]
           }
         },
-        
         "Model Category": {
           "description": "Choose the type of your model.",
           "type": "object",
-          "enum": ["Hydrology", "Agriculture", "Atmospheric Dispersion", "Decision Support", "Economy", "Fire", "Weather"],
+          "enum": [
+            "Hydrology",
+            "Agriculture",
+            "Atmospheric Dispersion",
+            "Decision Support",
+            "Economy",
+            "Fire",
+            "Weather"
+          ],
           "properties": {
-          	"required": ["Model Category"]
+            "required": [
+              "Model Category"
+            ]
           }
-        }, 
-
+        },
         "License": {
           "description": "Any license or copyright information for this resource.",
           "type": "array",
@@ -120,7 +142,9 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "id": {"$ref": "local://definitions-v1.0.0.json#/identifier"},
+              "id": {
+                "$ref": "local://definitions-v1.0.0.json#/identifier"
+              },
               "title": {
                 "description": "The license name or license itself. Free text.",
                 "type": "object"
@@ -135,25 +159,21 @@
               }
             }
           }
-        },        
-        
+        },
         "Spatial": {
           "description": "What spatial data is used?",
           "type": "string"
         },
-
         "Temporal": {
           "description": "What temporal data is used?",
           "type": "string"
         }
       }
     },
-
     "ext": {
       "type": "object",
       "description": "Configured additional metadata"
     },
-
     "tombstone": {
       "type": "object",
       "description": "Tombstone for the record.",
@@ -167,7 +187,9 @@
           "type": "string",
           "description": "Category for the removal."
         },
-        "removed_by": {"$ref": "local://records/definitions-v2.0.0.json#/agent"},
+        "removed_by": {
+          "$ref": "local://records/definitions-v2.0.0.json#/agent"
+        },
         "timestamp": {
           "type": "string",
           "description": "ISO8601 formatted timestamp in UTC.",
@@ -175,35 +197,40 @@
         }
       }
     },
-
     "provenance": {
       "type": "object",
       "description": "Record provenance.",
       "additionalProperties": false,
       "properties": {
-        "created_by": {"$ref": "local://records/definitions-v2.0.0.json#/agent"},
-        "on_behalf_of": {"$ref": "local://records/definitions-v2.0.0.json#/agent"}
+        "created_by": {
+          "$ref": "local://records/definitions-v2.0.0.json#/agent"
+        },
+        "on_behalf_of": {
+          "$ref": "local://records/definitions-v2.0.0.json#/agent"
+        }
       }
     },
-
     "access": {
       "type": "object",
       "description": "Record access control and ownership.",
       "additionalProperties": false,
       "properties": {
-
         "record": {
           "description": "Record visibility (public or restricted)",
           "type": "string",
-          "enum": ["public", "restricted"]
+          "enum": [
+            "public",
+            "restricted"
+          ]
         },
-
         "files": {
           "description": "Files visibility (public or restricted)",
           "type": "string",
-          "enum": ["public", "restricted"]
+          "enum": [
+            "public",
+            "restricted"
+          ]
         },
-
         "embargo": {
           "description": "Description of the embargo on the record.",
           "type": "object",
@@ -211,22 +238,30 @@
           "properties": {
             "active": {
               "description": "Whether or not the embargo is (still) active.",
-              "type": ["boolean", "null"]
+              "type": [
+                "boolean",
+                "null"
+              ]
             },
             "until": {
               "description": "Embargo date of record (ISO8601 formatted date time in UTC). At this time both metadata and files will be made public.",
-              "type": ["string", "null"],
+              "type": [
+                "string",
+                "null"
+              ],
               "format": "date"
             },
             "reason": {
               "description": "The reason why the record is under embargo.",
-              "type": ["string", "null"]
+              "type": [
+                "string",
+                "null"
+              ]
             }
           }
         }
       }
     },
-
     "files": {
       "type": "object",
       "description": "Files associated with the record",
@@ -248,19 +283,22 @@
         },
         "entries": {
           "type": "object",
-          "additionalProperties": {"$ref": "local://records/definitions-v2.0.0.json#/file"}
+          "additionalProperties": {
+            "$ref": "local://records/definitions-v2.0.0.json#/file"
+          }
         },
         "meta": {
           "type": "object",
-          "additionalProperties": {"type": "object"}
+          "additionalProperties": {
+            "type": "object"
+          }
         }
       }
     },
-
     "notes": {
       "type": "array",
-      "items":{
-          "type": "string"
+      "items": {
+        "type": "string"
       }
     }
   }
