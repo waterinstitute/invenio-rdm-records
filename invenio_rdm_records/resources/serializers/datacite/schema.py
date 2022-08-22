@@ -164,6 +164,7 @@ class DataCite43Schema(Schema):
         fields.Nested(ContributorSchema43), attribute="metadata.contributors"
     )
     publisher = fields.Str(attribute="metadata.publisher")
+    dictirionary = fields.Str(attribute="metadata.dictionary")
     publicationYear = fields.Method("get_publication_year")
     subjects = fields.Method("get_subjects")
     dates = fields.Method("get_dates")

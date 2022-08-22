@@ -34,6 +34,8 @@ class DublinCoreSchema(Schema):
     languages = fields.Method("get_languages")
     coverage = fields.Method("get_locations")
     formats = fields.Method("get_formats")
+    dictionaries = fields.Method("get_dictionaries")
+
 
     def get_titles(self, obj):
         """Get titles."""
@@ -215,3 +217,10 @@ class DublinCoreSchema(Schema):
         """Get data formats."""
         formats = obj["metadata"].get("formats", missing)
         return formats
+    def get_dictionaries(self, obj):
+        """Get data dictionaries."""
+        dictionary = obj["metadata"].get("dictionary")
+        if dictionary:
+            return [dictionary]
+
+        return missing

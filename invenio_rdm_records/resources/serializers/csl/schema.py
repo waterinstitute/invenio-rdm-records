@@ -61,6 +61,7 @@ class CSLJSONSchema(Schema):
     isbn = fields.Method("get_isbn", data_key="ISBN")
     issn = fields.Method("get_issn", data_key="ISSN")
     publisher = SanitizedUnicode(attribute="metadata.publisher")
+    dictionary = SanitizedUnicode(attribute="metadata.dictionary")
 
     def _read_resource_type(self, id_):
         """Retrieve resource type record using service."""
